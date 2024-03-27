@@ -35,6 +35,7 @@
 * **加载地图并导航**
   
 `source devel/setup.bash`
+
 `roslaunch husky_ur3_navigation husky_ur3_amcl.launch`
 
 ## send_goal.py
@@ -47,25 +48,26 @@
 `python3 scripts/control_Husky_UR3_3.py`
 
 
-#注意1：在运行send_goal.py时，需要保持代码中此处参数“map”与rviz中的frame_id保持一直（也为“map”）
+### 注意1：
+在运行send_goal.py时，需要保持代码中此处参数“map”与rviz中的frame_id保持一直（也为“map”）
 goal.target_pose.header.frame_id = "map"
-#注意2：当指定的（x,y）坐标点不可达时（或者机器人无法对该点路径规划时），机器人会出现原地一直转圈的情况。此时，重新指定可到达的（x,y）坐标即可。
+### 注意2：当指定的（x,y）坐标点不可达时（或者机器人无法对该点路径规划时），机器人会出现原地一直转圈的情况。此时，重新指定可到达的（x,y）坐标即可。
 
-#move_to_goal.py
-#作用：人手动输入（x,y,z）坐标后，机械臂通过moveit规划合理的路径，并运动至指定点（x,y,z）
-#路径：
-disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
+## move_to_goal.py
+**作用:** 人手动输入（x,y,z）坐标后，机械臂通过moveit规划合理的路径，并运动至指定点（x,y,z）
+**路径：** disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
 
-#运行move_to_goal.py
-cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config
-python3 scripts/ move_to_goal.py
+**运行move_to_goal.py**
 
-#注意1:合理配置kinematics.yaml文件: 
+'cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config'
+
+'python3 scripts/ move_to_goal.py'
+
+### 注意1:合理配置kinematics.yaml文件: 
 ur3_manipulator:
 kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin     
 kinematics_solver_search_resolution:0.005                     
-#设置了运动学求解过程中搜索解的分辨率。值0.005代表在搜索解的过程中，每步尝试的角度变化量（以弧度为单位）。较小的值会使求解器搜索更精细，可能提高求解成功率，但同时会增加计算负担
-kinematics_solver_timeout: 0.1 
-#不能设置的太小，不然Moveit没有足够的时间进行路劲规划
+设置了运动学求解过程中搜索解的分辨率。值0.005代表在搜索解的过程中，每步尝试的角度变化量（以弧度为单位）。较小的值会使求解器搜索更精细，可能提高求解成功率，但同时会增加计算负担
+kinematics_solver_timeout: 0.1不能设置的太小，不然Moveit没有足够的时间进行路劲规划
 
-#注意2：当返回规划失败的提示时，说明输入的(x,y,z)坐标点不可到达，请重新输入合理的(x,y,z)坐标点。
+### 注意2：当返回规划失败的提示时，说明输入的(x,y,z)坐标点不可到达，请重新输入合理的(x,y,z)坐标点。
