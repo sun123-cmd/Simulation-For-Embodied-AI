@@ -1,40 +1,50 @@
 ﻿##### 说明 #####
 在服务器上搭建了husky+ur5+robotiq_85+d435的gazebo仿真环境，目的是用于移动机器人在仓储环境的抓取任务仿真
 
-基于此开源代码：QualiaT/husky_ur3_simulator: ROS(melodic and noetic) package for mobile manipulator simulation (github.com)
+基于此开源代码： [ROS(melodic and noetic) package for mobile manipulator simulation (github.com)](https://github.com/QualiaT/husky_ur3_simulator)
 ##### 代码 #####
-# 在服务器上运行
-# 切换到文件存放目录 
-cd disk1/wangzixuan/catkin_ws
 
-# 进入虚拟环境 robottest-env
-conda activate robottest-env
+**在服务器上运行**
+*  **切换到文件存放目录**
 
-# 启动机器人的gazebo仿真
-# HRI_lab.world搭建了四个桌子和相关物品以及一些障碍物（3-14）
-roslaunch husky_ur3_gazebo husky_ur3_HRI_lab.launch
 
-# 启动机器人的rviz以及moveit
-source devel/setup.bash
-roslaunch husky_ur3_gripper_moveit_config Omni_control.launch
+`cd disk1/wangzixuan/catkin_ws`
 
-# 下述两个命令，选择其中一个执行即可
-# 不加载地图，直接导航
-source devel/setup.bash
-roslaunch husky_ur3_nav_without_map execution_without_map.launch
-# 加载地图并导航
-source devel/setup.bash
-roslaunch husky_ur3_navigation husky_ur3_amcl.launch
+* **进入虚拟环境 robottest-env**
+  
+`conda activate robottest-env`
 
-#send_goal.py
-#作用：人手动输入（x,y）坐标后，机器人底盘导航至相应（x,y）坐标点
-#路径：
-disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
-#运行send_goal.py
-（当前位置在
-disk1/wangzixuan/catkin_ws) 
-cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config
-python3 scripts/control_Husky_UR3_3.py
+**启动机器人的gazebo仿真**
+* **HRI_lab.world搭建了四个桌子和相关物品以及一些障碍物（3-14）**
+  
+`roslaunch husky_ur3_gazebo husky_ur3_HRI_lab.launch`
+
+* **启动机器人的rviz以及moveit**
+
+`source devel/setup.bash`
+
+`roslaunch husky_ur3_gripper_moveit_config Omni_control.launch`
+
+**下述两个命令，选择其中一个执行即可**
+* **不加载地图，直接导航**
+  
+`source devel/setup.bash`
+
+`roslaunch husky_ur3_nav_without_map execution_without_map.launch`
+
+* **加载地图并导航**
+  
+`source devel/setup.bash`
+`roslaunch husky_ur3_navigation husky_ur3_amcl.launch`
+
+## send_goal.py
+**作用：** 人手动输入（x,y）坐标后，机器人底盘导航至相应（x,y）坐标点
+**路径：** disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
+**运行send_goal.py** 
+（当前位置在disk1/wangzixuan/catkin_ws) 
+`cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
+
+`python3 scripts/control_Husky_UR3_3.py`
 
 
 #注意1：在运行send_goal.py时，需要保持代码中此处参数“map”与rviz中的frame_id保持一直（也为“map”）
