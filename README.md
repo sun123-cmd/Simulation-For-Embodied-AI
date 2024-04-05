@@ -9,6 +9,7 @@
 * **切换到文件存放目录**
 
 `cd disk1/wangzixuan/catkin_ws`
+
 `conda activate robottest-env`
 
 * **启动机器人的gazebo仿真**
@@ -33,6 +34,7 @@ HRI_lab.world搭建了四个桌子和相关物品以及一些障碍物（3-14）
 * **加载地图并导航**
 
 `source devel/setup.bash`
+
 `roslaunch husky_ur3_navigation husky_ur3_amcl.launch`
 
 ## 工具配置
@@ -45,6 +47,7 @@ disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_conf
 * 运行send_goal.py（当前位置在disk1/wangzixuan/catkin_ws)
 
 `cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
+
 `python3 scripts/control_Husky_UR3_3.py`
 
 * 注意1：在运行send_goal.py时，需要保持代码中此处参数“map”与rviz中的frame_id保持一直（也为“map”）
@@ -59,6 +62,7 @@ goal.target_pose.header.frame_id = "map"
 * 运行move_to_goal.py
   
 `cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
+
 `python3 scripts/ move_to_goal.py`
 
 * 注意1:合理配置kinematics.yaml文件:
