@@ -57,6 +57,7 @@ goal.target_pose.header.frame_id = "map"
 * 路径：disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
 
 * 运行move_to_goal.py
+  
 `cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
 `python3 scripts/ move_to_goal.py`
 
