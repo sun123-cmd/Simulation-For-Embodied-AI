@@ -51,7 +51,8 @@ disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_conf
 goal.target_pose.header.frame_id = "map"
 * 注意2：当指定的（x,y）坐标点不可达时（或者机器人无法对该点路径规划时），机器人会出现原地一直转圈的情况。此时，重新指定可到达的（x,y）坐标即可。
 
-* **move_to_goal.py**
+### move_to_goal.py
+
 * 作用：人手动输入（x,y,z）坐标后，机械臂通过moveit规划合理的路径，并运动至指定点（x,y,z）
 * 路径：disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
 
