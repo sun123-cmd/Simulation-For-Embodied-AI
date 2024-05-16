@@ -7,29 +7,27 @@
 ## 启动仿真
 
 * **切换到文件存放目录**
-
-`cd disk1/wangzixuan/catkin_ws`
-
-`conda activate robottest-env`
-
+```shell
+cd disk1/wangzixuan/catkin_ws
+conda activate robottest-env
+```
 * **启动机器人的gazebo仿真**
 HRI_lab.world搭建了四个桌子和相关物品以及一些障碍物（3-14）
-
-`roslaunch husky_ur3_gazebo husky_ur3_HRI_lab.launch`
-
+```shell
+roslaunch husky_ur3_gazebo husky_ur3_HRI_lab.launch
+```
 * **启动机器人的rviz以及moveit**
-
-`source devel/setup.bash`
-
-`roslaunch husky_ur3_gripper_moveit_config Omni_control.launch`
-
+```shell
+source devel/setup.bash
+roslaunch husky_ur3_gripper_moveit_config Omni_control.launch
+```
 *下述两个命令，选择其中一个执行即可**
 
 * **不加载地图，直接导航**
-
-`source devel/setup.bash`
-
-`roslaunch husky_ur3_nav_without_map execution_without_map.launch`
+```shell
+source devel/setup.bash
+roslaunch husky_ur3_nav_without_map execution_without_map.launch
+```
 
 * **加载地图并导航**
 ```shell
@@ -42,14 +40,12 @@ roslaunch husky_ur3_navigation husky_ur3_in_HRI_lab_amcl.launch
 ### send_goal.py
 
 * 作用：人手动输入（x,y）坐标后，机器人底盘导航至相应（x,y）坐标点
-* 路径：
-disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
+* 路径：`disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts`
 * 运行send_goal.py（当前位置在disk1/wangzixuan/catkin_ws)
-
-`cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
-
-`python3 scripts/control_Husky_UR3_3.py`
-
+```shell
+cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config
+python3 scripts/control_Husky_UR3_3.py
+```
 * 注意1：在运行send_goal.py时，需要保持代码中此处参数“map”与rviz中的frame_id保持一直（也为“map”）
 goal.target_pose.header.frame_id = "map"
 * 注意2：当指定的（x,y）坐标点不可达时（或者机器人无法对该点路径规划时），机器人会出现原地一直转圈的情况。此时，重新指定可到达的（x,y）坐标即可。
@@ -57,14 +53,13 @@ goal.target_pose.header.frame_id = "map"
 ### move_to_goal.py
 
 * 作用：人手动输入（x,y,z）坐标后，机械臂通过moveit规划合理的路径，并运动至指定点（x,y,z）
-* 路径：disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts
+* 路径：`disk1/wangzixuan/catkin_ws/src/husky_ur3_simulator/husky_ur3_gripper_moveit_config/scripts`
 
 * 运行move_to_goal.py
-  
-`cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config`
-
-`python3 scripts/ move_to_goal.py`
-
+```shell
+cd src/husky_ur3_simulator/husky_ur3_gripper_moveit_config
+python3 scripts/ move_to_goal.py
+```
 * 注意1:合理配置kinematics.yaml文件:
 ur3_manipulator:
 kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin
