@@ -32,10 +32,10 @@ HRI_lab.world搭建了四个桌子和相关物品以及一些障碍物（3-14）
 `roslaunch husky_ur3_nav_without_map execution_without_map.launch`
 
 * **加载地图并导航**
-
-`source devel/setup.bash`
-
-`roslaunch husky_ur3_navigation husky_ur3_amcl.launch`
+```shell
+source devel/setup.bash
+roslaunch husky_ur3_navigation husky_ur3_in_HRI_lab_amcl.launch
+```
 
 ## 工具配置
 
