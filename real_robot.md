@@ -100,8 +100,6 @@ roslaunch visual_servo tArmControlServer.launch
 roslaunch visual_servo tArmControlClient.launch
 ```
 
-
-
 ### 0529
 
 master is robot:
@@ -109,12 +107,8 @@ master is robot:
 robot:
 ```shell
 roslaunch dalu localization.launch
-
-
-________key board control [*coffee]
-
+roslaunch coffe_teleops keyboard_teleop.launch
 roslaunch visual_servo tNavArmGripperControl.launch
-
 roslaunch visual_servo GripperControl.launch
 ```
 
