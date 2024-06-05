@@ -79,7 +79,7 @@ roslaunch visual_servo uHandEyeCalibrate.launch
 catkin_make -DCATKIN_WHITELIST_PACKAGES="visual_servo"
 
 ## 启动anygrasp命令
-cd ~/anaconda3/bin/ && source activate && conda activate anygrasp && cd /home/maiya/anygrasp_ws/src/anygrasp_sdk/grasp_live && demo_camera.sh
+`cd ~/anaconda3/bin/ && source activate && conda activate anygrasp && cd /home/maiya/anygrasp_ws/src/anygrasp_sdk/grasp_live && demo_camera.sh`
 
 
 ## 搭建房子demo启动节点服务
@@ -100,6 +100,7 @@ roslaunch visual_servo tArmControlServer.launch
 roslaunch visual_servo tArmControlClient.launch
 ```
 
+## 真机实验
 ### 仅启动pick-place
 
 ```shell
