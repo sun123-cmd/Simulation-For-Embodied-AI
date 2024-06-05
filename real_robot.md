@@ -100,6 +100,14 @@ roslaunch visual_servo tArmControlServer.launch
 roslaunch visual_servo tArmControlClient.launch
 ```
 
+### 仅启动pick-place
+
+```shell
+roslaunch visual_servo GripperControl.launch
+roslaunch visual_servo uGraspControl.launch 
+```
+启动AnyGrasp,即可对输出的pose执行动作
+
 ### 0529
 
 master is robot:
