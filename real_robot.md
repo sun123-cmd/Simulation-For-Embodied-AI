@@ -76,11 +76,14 @@ roslaunch visual_servo uHandEyeCalibrate.launch
 
 # 其他
 ## 单独编译visual_servo功能包
+```shell
 catkin_make -DCATKIN_WHITELIST_PACKAGES="visual_servo"
+```
 
 ## 启动anygrasp命令
+```shell
 cd ~/anaconda3/bin/ && source activate && conda activate anygrasp && cd /home/maiya/anygrasp_ws/src/anygrasp_sdk/grasp_live && demo_camera.sh
-
+```
 
 ## 搭建房子demo启动节点服务
 ### 启动夹爪动作服务
