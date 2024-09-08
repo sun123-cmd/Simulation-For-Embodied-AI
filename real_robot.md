@@ -101,15 +101,15 @@ roslaunch visual_servo tArmControlClient.launch
 ```
 
 ## 真机实验
-### 仅启动pick-place
+### 简单pick-place的demo
 
 ```shell
+roslaunch visual_servo tNavArmGripperControl.launch
 roslaunch visual_servo GripperControl.launch
-roslaunch visual_servo uGraspControl.launch 
 ```
 启动AnyGrasp,即可对输出的pose执行动作
 
-### 0529
+### 复杂pick-place
 
 master is robot:
 
@@ -117,8 +117,8 @@ robot:
 ```shell
 roslaunch dalu localization.launch
 roslaunch coffe_teleops keyboard_teleop.launch
-roslaunch visual_servo tNavArmGripperControl.launch
 roslaunch visual_servo GripperControl.launch
+roslaunch visual_servo uGraspControl.launch 
 ```
 
 server:
