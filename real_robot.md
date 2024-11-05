@@ -76,8 +76,9 @@ roslaunch visual_servo uHandEyeCalibrate.launch
 
 # 其他
 ## 单独编译visual_servo功能包
+```shell
 catkin_make -DCATKIN_WHITELIST_PACKAGES="visual_servo"
-
+```
 ## 启动anygrasp命令
 `cd ~/anaconda3/bin/ && source activate && conda activate anygrasp && cd /home/maiya/anygrasp_ws/src/anygrasp_sdk/grasp_live && demo_camera.sh`
 
@@ -108,6 +109,12 @@ roslaunch visual_servo tNavArmGripperControl.launch
 roslaunch visual_servo GripperControl.launch
 ```
 启动AnyGrasp,即可对输出的pose执行动作
+
+### Just control UR3
+```
+roslaunch visual_servo uGraspControl.launch 
+```
+Meanwhile, you need change codes at `/visual_servo/src/utils/uGraspControl.cpp` and `/visual_servo/include/uGraspControl.h`
 
 ### 复杂pick-place
 
