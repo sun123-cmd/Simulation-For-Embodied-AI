@@ -114,7 +114,9 @@ roslaunch visual_servo GripperControl.launch
 ```
 roslaunch visual_servo uGraspControl.launch 
 ```
-Meanwhile, you need change codes at `/visual_servo/src/utils/uGraspControl.cpp` and `/visual_servo/include/uGraspControl.h`
+Meanwhile, you need change codes at 
+`catkin_ws/src/visual_servo/utils/uGraspControl.cpp` and 
+`/catkin_ws/src/visual_servo/include/visual_servo/UR3RtdeWrapper.h`
 
 ### 复杂pick-place
 
