@@ -129,6 +129,10 @@ roslaunch coffe_teleops keyboard_teleop.launch
 roslaunch visual_servo GripperControl.launch
 roslaunch visual_servo uGraspControl.launch 
 ```
+获得当前机器人所在位置：
+```
+rosrun tf tf_echo /map /base_link_calibration
+```
 
 server:
 ```shell
