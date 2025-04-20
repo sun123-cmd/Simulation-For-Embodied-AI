@@ -102,13 +102,7 @@ roslaunch visual_servo tArmControlClient.launch
 ```
 
 ## 真机实验
-### 简单pick-place的demo
 
-```shell
-roslaunch visual_servo tNavArmGripperControl.launch
-roslaunch visual_servo GripperControl.launch
-```
-启动AnyGrasp,即可对输出的pose执行动作
 
 ### Just control UR3
 ```
